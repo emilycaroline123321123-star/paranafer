@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { WhatsappIcon } from './Icons';
+import { WhatsappIcon } from './Icons.tsx';
 
 interface CTAButtonProps {
   text: string;
@@ -9,7 +8,7 @@ interface CTAButtonProps {
 }
 
 const CTAButton: React.FC<CTAButtonProps> = ({ text, variant = 'primary', fullWidth = false }) => {
-  const baseStyles = "inline-flex items-center justify-center px-8 py-4 text-lg font-extrabold uppercase tracking-wider transition-all duration-300 rounded-lg transform hover:scale-105 active:scale-95 shadow-xl";
+  const baseStyles = "inline-flex items-center justify-center px-8 py-4 text-base md:text-lg font-extrabold uppercase tracking-wider transition-all duration-300 rounded-lg transform hover:scale-105 active:scale-95 shadow-xl";
   
   const variants = {
     primary: "bg-amber-500 text-slate-900 hover:bg-amber-400",
@@ -19,7 +18,9 @@ const CTAButton: React.FC<CTAButtonProps> = ({ text, variant = 'primary', fullWi
 
   return (
     <a 
-      href="#contato" 
+      href="https://wa.me/seu-numero-aqui" 
+      target="_blank"
+      rel="noopener noreferrer"
       className={`${baseStyles} ${variants[variant]} ${fullWidth ? 'w-full' : ''}`}
     >
       {variant === 'whatsapp' && <span className="mr-3"><WhatsappIcon /></span>}
